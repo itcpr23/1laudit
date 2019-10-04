@@ -42,4 +42,23 @@ public class addproduct {
        }
      
      }
-}
+     
+     public void delproduct (int id){
+     
+       try {
+           Class.forName("com.mysql.jdbc.Driver");
+           Connection con = DriverManager.getConnection(driver,us,ps1);
+           PreparedStatement pres = con.prepareStatement("Delete from product where prod_id =?");
+           pres.setInt(1, id);
+           pres.executeUpdate();
+           
+           
+       
+       } catch (ClassNotFoundException ex) {
+           Logger.getLogger(addproduct.class.getName()).log(Level.SEVERE, null, ex);
+       } catch (SQLException ex) {
+           Logger.getLogger(addproduct.class.getName()).log(Level.SEVERE, null, ex);
+       }
+     
+     }
+    }

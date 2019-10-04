@@ -14,7 +14,7 @@
 
 -- Dumping database structure for bsitact23
 CREATE DATABASE IF NOT EXISTS `bsitact23` /*!40100 DEFAULT CHARACTER SET latin1 */;
-USE `bsitact23`;
+USE `registerregisterregregregisterregisterbsitact23`;
 
 -- Dumping structure for table bsitact23.bsit23
 CREATE TABLE IF NOT EXISTS `bsit23` (
@@ -30,3 +30,4 @@ CREATE TABLE IF NOT EXISTS `bsit23` (
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+bsitact23
