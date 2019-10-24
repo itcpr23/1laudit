@@ -84,4 +84,27 @@ public class addproduct {
          return k;
          
      }
-    }
+     public int quantityadd(int id, int quantity){
+      int l=0;
+      
+      
+         try {
+
+           Class.forName(new conn().driver);
+           Connection con = DriverManager.getConnection(driver,us, ps1);
+           PreparedStatement prep = con.prepareStatement("update product set prod_quantity = prod_quantity + ? where prod_id = ? ");
+           prep.setInt(1, quantity);
+           prep.setInt(2, id);
+           
+           
+            l=prep.executeUpdate();
+           
+          
+       } catch (ClassNotFoundException ex) {
+           Logger.getLogger(addproduct.class.getName()).log(Level.SEVERE, null, ex);
+       } catch (SQLException ex) {
+           Logger.getLogger(addproduct.class.getName()).log(Level.SEVERE, null, ex);
+       }
+       return l;
+    } 
+}

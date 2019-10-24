@@ -89,12 +89,14 @@ public class newadd extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         tfprod = new javax.swing.JTextField();
         jsquan = new javax.swing.JSpinner();
-        jButton3 = new javax.swing.JButton();
+        addbtn = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         tfprice = new javax.swing.JFormattedTextField();
-        jButton5 = new javax.swing.JButton();
+        editbtn = new javax.swing.JButton();
+        lfield = new javax.swing.JLabel();
+        addqntty = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -105,6 +107,7 @@ public class newadd extends javax.swing.JFrame {
         editp = new javax.swing.JButton();
         search = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
+        editp1 = new javax.swing.JButton();
 
         add.setMinimumSize(new java.awt.Dimension(423, 342));
 
@@ -131,12 +134,12 @@ public class newadd extends javax.swing.JFrame {
         jsquan.setMinimumSize(new java.awt.Dimension(30, 20));
         jsquan.setPreferredSize(new java.awt.Dimension(30, 20));
 
-        jButton3.setBackground(new java.awt.Color(153, 0, 153));
-        jButton3.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        jButton3.setText("Submit");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        addbtn.setBackground(new java.awt.Color(153, 0, 153));
+        addbtn.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        addbtn.setText("Add");
+        addbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                addbtnActionPerformed(evt);
             }
         });
 
@@ -174,12 +177,21 @@ public class newadd extends javax.swing.JFrame {
 
         tfprice.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter()));
 
-        jButton5.setBackground(new java.awt.Color(153, 0, 153));
-        jButton5.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        jButton5.setText("EDIT");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        editbtn.setBackground(new java.awt.Color(153, 0, 153));
+        editbtn.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        editbtn.setText("EDIT");
+        editbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                editbtnActionPerformed(evt);
+            }
+        });
+
+        addqntty.setBackground(new java.awt.Color(153, 0, 153));
+        addqntty.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        addqntty.setText("Add Q");
+        addqntty.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addqnttyActionPerformed(evt);
             }
         });
 
@@ -189,26 +201,31 @@ public class newadd extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(21, 21, 21)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel3)
                             .addComponent(jLabel2)
                             .addComponent(jLabel1))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jsquan, javax.swing.GroupLayout.DEFAULT_SIZE, 164, Short.MAX_VALUE)
                             .addComponent(tfprod, javax.swing.GroupLayout.DEFAULT_SIZE, 164, Short.MAX_VALUE)
-                            .addComponent(tfprice)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
-                        .addGap(29, 29, 29)
+                            .addComponent(tfprice)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                                .addComponent(lfield, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jsquan, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addContainerGap()
                         .addComponent(jButton4)
-                        .addGap(29, 29, 29)
-                        .addComponent(jButton3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(25, 25, 25))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(addbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(editbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(addqntty, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(14, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -221,7 +238,8 @@ public class newadd extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jsquan, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jsquan, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lfield, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -229,9 +247,10 @@ public class newadd extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton4)
-                    .addComponent(jButton3)
-                    .addComponent(jButton5))
-                .addContainerGap(66, Short.MAX_VALUE))
+                    .addComponent(addbtn)
+                    .addComponent(editbtn)
+                    .addComponent(addqntty))
+                .addGap(108, 108, 108))
         );
 
         javax.swing.GroupLayout addLayout = new javax.swing.GroupLayout(add.getContentPane());
@@ -322,6 +341,15 @@ public class newadd extends javax.swing.JFrame {
             }
         });
 
+        editp1.setBackground(new java.awt.Color(204, 0, 255));
+        editp1.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        editp1.setText("Add Quantity");
+        editp1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                editp1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -335,18 +363,20 @@ public class newadd extends javax.swing.JFrame {
                                 .addComponent(jButton2)
                                 .addGap(34, 34, 34))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addContainerGap()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(addp, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(deletep, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(editp, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, 18)))
+                                    .addComponent(editp, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(editp1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 470, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(71, 71, 71)
                         .addComponent(search, javax.swing.GroupLayout.PREFERRED_SIZE, 412, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(64, Short.MAX_VALUE))
+                .addContainerGap(13, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -361,8 +391,10 @@ public class newadd extends javax.swing.JFrame {
                         .addComponent(addp, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(deletep, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(editp, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(editp1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButton2))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 327, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -407,7 +439,7 @@ clearfields(); add.setVisible(false);this.setEnabled(true);this.setVisible(true)
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton4ActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void addbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addbtnActionPerformed
 String product=tfprod.getText();
  int qty=Integer.parseInt(jsquan.getValue().toString());
  Object p = tfprice.getValue();
@@ -425,7 +457,7 @@ String product=tfprod.getText();
     
 
 // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_addbtnActionPerformed
 
     private void deletepActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deletepActionPerformed
 int row = tbltab.getSelectedRow();
@@ -463,14 +495,14 @@ if(tbl==-1){
 }
     }//GEN-LAST:event_editpActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+    private void editbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editbtnActionPerformed
  new addproduct().editProd(id, tfprod.getText(),Float.parseFloat(tfprice.getValue().toString()));
  
   clearfields();
   Showproducts();  
 add.setVisible(false);
 
-    }//GEN-LAST:event_jButton5ActionPerformed
+    }//GEN-LAST:event_editbtnActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 String sql="select * from product where prod_name like ? or prod_id like ?";
@@ -520,6 +552,47 @@ String sql="select * from product where prod_name like ? or prod_id like ?";
        }        // TODO add your handling code here:
     }//GEN-LAST:event_searchKeyReleased
 
+    private void editp1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editp1ActionPerformed
+      int t = tbltab.getSelectedRow();
+      if(t!=-1){
+        add.setVisible(true);add.setAlwaysOnTop(true);this.setEnabled(false);
+        addbtn.setVisible(false);addqntty.setVisible(true);editbtn.setVisible(false); 
+        id = Integer.parseInt(tbltab.getValueAt(t, 0).toString());
+        Object pnm = tbltab.getValueAt(t, 1);
+        Object quant = tbltab.getValueAt(t, 2);
+        Object prc = tbltab.getValueAt(t, 3);
+        
+        jsquan.setValue(1);
+        tfprod.setText(pnm.toString());
+        lfield.setText(quant.toString());
+        tfprice.setValue(Float.parseFloat(prc.toString()));
+      }
+      
+      else{
+      JOptionPane.showMessageDialog(add, "Please select product", "ERROR MESSAGE",JOptionPane.ERROR_MESSAGE);
+      }
+        
+
+// TODO add your handling code here:
+    }//GEN-LAST:event_editp1ActionPerformed
+
+    private void addqnttyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addqnttyActionPerformed
+      int d = JOptionPane.showConfirmDialog(add, "Do you want to add\n     "+jsquan.getValue()+"\n to "+tfprod.getText()+" ?","System Confirmation",JOptionPane.YES_NO_OPTION);
+      if(d==JOptionPane.YES_OPTION){
+      int a = new addproduct().quantityadd(id, Integer.parseInt(jsquan.getValue().toString())); 
+      if(a==1){
+       JOptionPane.showMessageDialog(add, "Succesfully Added ", "System Message", JOptionPane.INFORMATION_MESSAGE);  
+       clearfields();
+       Showproducts();
+      add.setVisible(false);this.setEnabled(true);
+      }
+   else{
+   JOptionPane.showMessageDialog(add, "Something went wrong", "ERROR MESSAGE", JOptionPane.ERROR_MESSAGE);  
+}
+      }  
+
+    }//GEN-LAST:event_addqnttyActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -557,14 +630,16 @@ String sql="select * from product where prod_name like ? or prod_id like ?";
 //cute
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JFrame add;
+    private javax.swing.JButton addbtn;
     private javax.swing.JButton addp;
+    private javax.swing.JButton addqntty;
     private javax.swing.JButton deletep;
+    private javax.swing.JButton editbtn;
     private javax.swing.JButton editp;
+    private javax.swing.JButton editp1;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -575,6 +650,7 @@ String sql="select * from product where prod_name like ? or prod_id like ?";
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSpinner jsquan;
+    private javax.swing.JLabel lfield;
     private javax.swing.JTextField search;
     private javax.swing.JTable tbltab;
     private javax.swing.JFormattedTextField tfprice;
